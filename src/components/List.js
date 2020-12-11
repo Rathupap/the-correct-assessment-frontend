@@ -6,28 +6,22 @@ import CatsList from './CatsList';
 const List = ({ history }) => {
 
     const action = history.action;
-    const [cats, setCats] = useState([])
+    const [cats, setCats] = useState([]);
+    const [err, setErr] = useState(false);
 
     useEffect(() => {
 
-        if(action === "PUSH"){
-
-            fetch("http://thecatapi.com/api/images/get?format=json&results_per_page=12&size=small&type=png",{ mode: "cors"}).then((response) => {
+        fetch("/api/images/get?format=json&results_per_page=12&size=small&type=png",{ mode: "cors" }).then((response) => {
 
             return response.json();
 
-            }).then((data) => {
-                localStorage.setItem("cats", JSON.stringify(data))
-                setCats(data)
-            }).catch((err) => {
-                console.log(err)
-            })
+        }).then((data) => {
+            localStorage.setItem("cats", JSON.stringify(data))
+            setCats(data)
+        }).catch((err) => {
+            setErr(true)
+        })
 
-        }else{
-            const oldCats = JSON.parse(localStorage.getItem("cats")) || [];
-            setCats(oldCats)
-        }
-    
     }, [action])
 
     return (
@@ -46,7 +40,9 @@ const List = ({ history }) => {
             <h2 className="title">The Famous <span className="effect">Cat List</span></h2>
             <div className="row">
                 {
-                    cats.length > 0 ? 
+                    err ?
+                        <h3>Something went wrong with your request</h3>
+                    : cats.length > 0 ? 
                     cats.map((cat, index) => {
                         const catNo = index + 1;
                         return <div className="col-sm-4 col-12 cats" key={cat.id}>
