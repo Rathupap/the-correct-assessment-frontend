@@ -1,0 +1,171 @@
+body {
+    font-family: 'Raleway', sans-serif !important;
+
+    #root {
+
+      nav {
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #f7f7f7;
+        z-index: 999;
+        
+        .container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+
+            img {
+              width: 8rem;
+              height: auto;
+            }
+
+        }
+
+        ul {
+          list-style: none;
+          margin: 0;
+
+           li {
+             display: inline-block;
+
+             a {
+               color: #00A5FF;
+               font-weight: 600;
+             }
+           }
+
+        }
+      }
+
+      .wrapper {
+        min-height: calc(100vh - 12rem);
+        position: relative;
+        z-index: 10;
+      }
+
+      footer {
+        padding: 1rem;
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #00A5FF;
+        z-index: 999;
+
+        p {
+          text-align: center;
+          margin: 0;
+          font-weight: 600;
+          color: #fff;
+        }
+      }
+
+      .effect {
+        color: #00A5FF;
+      }
+
+      img {
+
+        width: 100%;
+      
+      }
+
+      .title {
+          font-weight:700;
+          margin: 1rem 0;
+          text-align: center;
+      }
+
+      .cats {
+
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        &.cat-detail {
+
+          .cat-image {
+            height: 30rem
+          }
+
+        }
+    
+        .link {
+          color: #000;
+    
+          &:hover {
+            text-decoration: none;
+          }
+        }
+    
+        .cat-image {
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 15rem;
+          position: relative;
+    
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            opacity: .3;
+          }
+        }
+    
+        .cat-content {
+    
+          background-color: #f7f7f7;
+          padding: 1rem;
+          border-bottom-left-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+    
+          h4 {
+    
+            color: #00A5FF;
+            font-weight: 900;
+      
+          }
+    
+        }
+    
+      }
+
+      .loader {
+        margin: 1rem auto;
+      }
+
+      .meow-button {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      
+      .details {
+      
+        margin-top: 1rem;
+
+        .back-button {
+          margin-bottom: 1rem;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      
+      }
+
+    }
+}
+
+
+
+
