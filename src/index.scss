@@ -82,6 +82,27 @@ body {
           text-align: center;
       }
 
+      .components {
+        text-align: center;
+        margin-bottom: 1.5rem;
+
+        .component-content {
+    
+          background-color: #f7f7f7;
+          padding: 1rem;
+          border-bottom-left-radius: 1rem;
+          border-bottom-right-radius: 1rem;
+    
+          h4 {
+    
+            color: #00A5FF;
+            font-weight: 900;
+      
+          }
+    
+        }
+      }
+
       .cats {
 
         text-align: center;
@@ -92,7 +113,7 @@ body {
           .cat-image {
             height: 30rem
           }
-
+          
         }
     
         .link {

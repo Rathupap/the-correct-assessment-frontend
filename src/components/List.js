@@ -1,14 +1,16 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CatsList from './CatsList';
-//import ComponentsList from './ComponentsList';
+import ComponentsList from './ComponentsList';
 
 const List = ({ history }) => {
 
     const action = history.action;
     const [cats, setCats] = useState([]);
     const [err, setErr] = useState(false);
-
+    const components = [];
+    //Array.from(Array(250).keys());
+    
     useEffect(() => {
 
         fetch("/api/images/get?format=json&results_per_page=12&size=small&type=png",{ mode: "cors" }).then((response) => {
@@ -26,7 +28,7 @@ const List = ({ history }) => {
 
     return (
         <Fragment>
-            {/* <h2 className="title">The Famous <span className="effect">Components List</span></h2>
+            { components.length > 0 && <Fragment><h2 className="title">The Famous <span className="effect">Components List</span></h2>
             <div className="row">
                 {
                     components.map((item) => {
@@ -35,7 +37,8 @@ const List = ({ history }) => {
                     })
                 }
             </div>
-            */}
+            </Fragment>
+            }
 
             <h2 className="title">The Famous <span className="effect">Cat List</span></h2>
             <div className="row">
